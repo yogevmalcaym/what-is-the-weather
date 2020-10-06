@@ -11,13 +11,18 @@ const getCurrentCity = () =>
         if (!navigator.geolocation) resolve();
 
         const successCallback = async ({coords}) => {
-            const coordsText = `${coords.latitude},${coords.longitude}`;
-            const {data: locationData} = await helpers.fetchLocationByCoords({coords: coordsText});
+            try {
+                const coordsText = `${coords.latitude},${coords.longitude}`;
+                const {data: locationData} = await helpers.fetchLocationByCoords({coords: coordsText});
 
-            resolve({key: locationData.Key, name: locationData.LocalizedName});
+                resolve({key: locationData.Key, name: locationData.LocalizedName});
+
+            } catch (error) {
+                reject(error)
+            }
         }
 
-        navigator.geolocation.getCurrentPosition(successCallback, () => resolve());
+        navigator.geolocation.getCurrentPosition(successCallback, (err) => resolve());
     })
 
 export const init = () => async (dispatch, getState) => {
@@ -28,7 +33,7 @@ export const init = () => async (dispatch, getState) => {
 
         await dispatch(actions.setInitData({initCompleted: true, city, favorites}));
     } catch (error) {
-        await dispatch(setGlobalError({globalError: error}));
+        await dispatch(setGlobalError({globalError: error, initCompleted: true}));
     }
 };
 

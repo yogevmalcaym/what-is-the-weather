@@ -15,10 +15,12 @@ import ErrorModal from './components/ErrorModal/ErrorModal';
 import PageNotFound from './components/PageNotFound/PageNotFound';
 
 const Layout = styled(({className, init, initCompleted, toggleTheme, currentTheme, city, globalError, location = {}, navigate, onAddFavorite, onRemoveFavorite, favorites}) => {
+
         if (!initCompleted) throw init();
 
         useEffect(() => {
-            if (location.pathname === '/') navigate(consts.WEATHER_PAGE_URL);
+
+            if (location.pathname === consts.BASE_PATH_NAME) navigate(consts.WEATHER_PAGE_URL);
         }, [location.pathname]);
 
         return <div {...{className: classNames(className, 'layout')}}>

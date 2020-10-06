@@ -2,10 +2,6 @@ const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
-    watch: true,
-    watchOptions: {
-        ignored: /node_modules/,
-    },
     mode: 'development',
     entry: [
         'babel-polyfill',
@@ -38,10 +34,13 @@ module.exports = {
             store: path.resolve(__dirname, 'src/store'),
             "@common-components": path.resolve(__dirname, 'src/commonComponents'),
             utils: path.resolve(__dirname, 'src/globals/utils'),
+            assets: path.resolve(__dirname, 'dist/assets'),
+
         }
     },
+
     output: {
-        publicPath: "/",
+        publicPath: '/',
         path: path.join(__dirname, 'dist'),
         filename: 'bundle.js',
     },
@@ -50,7 +49,8 @@ module.exports = {
         new webpack.HotModuleReplacementPlugin(),
     ],
     devServer: {
-        contentBase: './src',
+        contentBase: './dist',
+        publicPath: '/',
         historyApiFallback: true,
         hot: true,
         open: true
