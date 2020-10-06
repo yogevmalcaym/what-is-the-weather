@@ -20,7 +20,7 @@ const Layout = styled(({className, init, initCompleted, toggleTheme, currentThem
 
         useEffect(() => {
 
-            if (location.pathname === consts.BASE_PATH_NAME) navigate(consts.WEATHER_PAGE_URL);
+            if (location.pathname === '/') navigate(consts.WEATHER_PAGE_URL);
         }, [location.pathname]);
 
         return <div {...{className: classNames(className, 'layout')}}>
