@@ -5,7 +5,7 @@ import * as styles from './styles';
 import * as consts from './consts'
 import Day from "./components/Day/Day";
 
-export default styled(memo(({className, data = {}}) =>
+export default styled(memo(({className, data = {Headline: {}, DailyForecasts: []}}) =>
     <div {...{className: classNames(className, 'forecast')}}>
         <h3 className='forecast-heading'>{consts.HEADING}</h3>
         <div className='summary-text'><span>{consts.SUMMARY}</span>{data.Headline.Text} .</div>

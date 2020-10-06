@@ -1,9 +1,14 @@
 import {css} from 'styled-components';
 
 export const PageNotFound = css`
+    display: flex;
     height: 100%;
     width: 100%;
-    display: flex;
+    background-color: white;
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    right: 0;
 
     > img {
         z-index: 1;

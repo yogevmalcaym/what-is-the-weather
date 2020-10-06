@@ -4,7 +4,7 @@ import {updateState} from "store/utils";
 
 const INITIAL_STATE = {
     globalError: null,
-    city: {},
+    city: null,
     initCompleted: false,
     favorites: []
 };

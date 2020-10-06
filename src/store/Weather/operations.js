@@ -5,13 +5,16 @@ import * as consts from './consts';
 
 export const init = ({city}) => async (dispatch, getState) => {
     try {
+        if(city) {
+            const {data: [current]} = await helpers.fetchCurrentWeather({locationKey: city.key});
+            const {data: forecast} = await helpers.fetch5DaysForecast({locationKey: city.key});
 
-        const {data: [current]} = await helpers.fetchCurrentWeather({locationKey: city.key});
-        const {data: forecast} = await helpers.fetch5DaysForecast({locationKey: city.key});
-
-        await dispatch(actions.setInitData({initCompleted: true, weatherData: {current, forecast}}));
+            await dispatch(actions.setInitData({initCompleted: true, weatherData: {current, forecast}}));
+        }
     } catch (error) {
-        await dispatch(setGlobalError({globalError: error}));
+        await dispatch(setGlobalError({globalError: error, initCompleted: true}));
+        await dispatch(actions.setInitCompleted({initCompleted: true}));
+
     }
 };
 

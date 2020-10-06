@@ -37,13 +37,12 @@ const Layout = styled(({className, init, initCompleted, toggleTheme, currentThem
     }
 )`${styles.Layout}`;
 
-const LayoutWrapper = props => {
-    return <Suspense fallback={<Loader/>}>
+const LayoutWrapper = props =>
+    <Suspense fallback={<Loader/>}>
         <Router>
             <Layout {...{path: './*', ...props}} default/>
         </Router>
     </Suspense>
-};
 
 const mapStateToProps = state => ({
     initCompleted: selectors.getInitCompleted(state),

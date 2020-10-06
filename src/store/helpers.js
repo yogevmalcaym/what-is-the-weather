@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_KEY = '74ZlKPuyK5YpSdWIkMKofJWHeVX3UvLA';
+const API_KEY = 'wv4gytjAGSE2x1KIVqCpkAXuRBZLjhvj';
 
 
 export const fetchCurrentWeather = ({locationKey}) =>

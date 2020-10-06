@@ -33,6 +33,7 @@ export const init = () => async (dispatch, getState) => {
 
         await dispatch(actions.setInitData({initCompleted: true, city, favorites}));
     } catch (error) {
+
         await dispatch(setGlobalError({globalError: error, initCompleted: true}));
     }
 };

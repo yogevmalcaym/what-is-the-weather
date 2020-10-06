@@ -15,6 +15,8 @@ export default (state = INITIAL_STATE, {type, data}) => {
             return updateState({state, data});
         case types.SET_FORM_ERROR:
             return updateState({state, data});
+            case types.SET_INIT_COMPLETED:
+            return updateState({state, data});
         default:
             return state;
 
