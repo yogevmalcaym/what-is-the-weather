@@ -1,0 +1,3 @@
+const BASE = 'FAVORITES/'
+
+export const SET_FAVORITES_DATA = `${BASE}SET_FAVORITES_DATA`;
