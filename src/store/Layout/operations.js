@@ -8,7 +8,7 @@ const DEFAULT_CITY = {name: "Tel Aviv", key: '215854'};
 
 const getCurrentCity = () =>
     new Promise((resolve, reject) => {
-        if (!navigator.geolocation) resolve();
+        if (!navigator.geolocation) resolve(null);
 
         const successCallback = async ({coords}) => {
             try {
@@ -22,7 +22,7 @@ const getCurrentCity = () =>
             }
         }
 
-        navigator.geolocation.getCurrentPosition(successCallback, (err) => resolve());
+        navigator.geolocation.getCurrentPosition(successCallback, (err) => resolve(null));
     })
 
 export const init = () => async (dispatch, getState) => {
