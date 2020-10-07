@@ -9,13 +9,18 @@ export const SearchForm = css`
     > input {
         border-radius: 5px;
         margin-left: 2px;
+        color: initial;
+    }
+    
+    > button {
+        color: initial;
     }
     
     > .form-toast {
         position: absolute;
         margin-top: 5px;
         width: 100%;
-        padding: 0px 5px;
+        padding: 0px 5px;        
         
         > .toast-header {
             display: flex;
@@ -26,6 +31,10 @@ export const SearchForm = css`
                 width: 12px;
             }
             
+        }
+        
+        > .toast-body {
+            color: initial;
         }
     }
 

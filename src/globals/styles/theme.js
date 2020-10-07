@@ -14,6 +14,9 @@ export default {
             },
             danger: {
                 main: '#b60000'
+            },
+            text: {
+                main: '#403c3c'
             }
         }
     },
@@ -23,7 +26,7 @@ export default {
                 main: '#47af47',
             },
             background: {
-                main: '#fbfbfb',
+                main: '#403c3c',
                 dark: '#6a6b6c',
                 darker: '#403c3c',
                 light: '#e8e9eb',
@@ -31,6 +34,9 @@ export default {
             },
             danger: {
                 main: '#b60000'
+            },
+            text: {
+                main: '#e8e9eb'
             }
         }
     }

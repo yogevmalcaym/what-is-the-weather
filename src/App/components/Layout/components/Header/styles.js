@@ -9,7 +9,7 @@ export const Header = css`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: ${getColor('background', 'light')} 0px 2px 7px 6px;
+    box-shadow: ${getColor('background', 'lighter')} 0px 2px 7px 6px;
     
     > h2 {
         margin-left: 10px;
@@ -42,8 +42,8 @@ export const Header = css`
     }
     
     > .theme-toggle-dark {
-        box-shadow: ${getColor('background', 'dark')} 1px 1px 4px 2px;        
-        color: inherit;
+        box-shadow: ${getColor('background', 'light')} 1px 1px 4px 2px;        
+        color: initial;
         background-color: ${getColor('background', 'lighter')};    
     }
     
@@ -69,7 +69,7 @@ export const Header = css`
             font-weight: bold;
             border: 1px ${getColor('background', 'dark')} solid;
             box-shadow: ${getColor('background', 'dark')} 0px 0px 2px 2px;
-            color: initial;
+            color: inherit;
             padding: 5px;
             border-radius: 5px;
             text-align: center;

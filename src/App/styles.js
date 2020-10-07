@@ -1,4 +1,4 @@
-import {createGlobalStyle, css} from 'styled-components';
+import {createGlobalStyle} from 'styled-components';
 import {getColor} from 'styles/helper';
 
 export const GlobalStyle = createGlobalStyle`
@@ -6,6 +6,10 @@ export const GlobalStyle = createGlobalStyle`
         height: 100%;
         width: 100%;
         margin: 0;
+    }
+    
+    * {
+        color: ${getColor('text')};
     }
     
   

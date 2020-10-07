@@ -9,7 +9,6 @@ export const Layout = css`
     text-align: center;
     
     > .router {
-        background-color: ${getColor('background', 'lighter')};
         display: flex;
         flex-direction: column;
         flex-grow: 1;

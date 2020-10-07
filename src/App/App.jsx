@@ -8,7 +8,7 @@ import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
 
 const history = createHistory(window);
 
-const themeTypes = ["dark", "light"];
+const themeTypes = ["light", "dark"];
 
 export default () => {
 
