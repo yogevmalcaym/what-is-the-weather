@@ -1,4 +1,4 @@
-export const HEADING = 'Is Herolo Awesome? :)';
+export const HEADING = 'Weather App :)';
 export const WEATHER = 'Weather';
 export const FAVORITES = 'Favorites';
 export const THEME_TEXTS = {

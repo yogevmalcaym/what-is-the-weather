@@ -22,7 +22,7 @@ const Weather = styled(memo(({className, initCompleted, init, city, findWeather,
             isFavorite ?
                 onRemoveFavorite({key: city.key}) :
                 onAddFavorite(city)
-        , [city.key]);
+        , [city]);
 
     const onFormSubmit = useCallback(({name}) => findWeather({name}), []);
 
